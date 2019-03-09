@@ -23,22 +23,24 @@ namespace API_Rest.Controllers
 
         // GET: api/Book
         [HttpGet]
-        public IEnumerable<string> Get()
+        public IActionResult Get()
         {
-            return new string[] { "value1", "value2" };
+            List<Book> books =_service.ListAllBook();
+            return Ok(books);
         }
 
         // GET: api/Book/5
         [HttpGet("{id}", Name = "Get")]
-        public Book Get(int id)
+        public IActionResult Get(int id)
         {
-            return _service.FindById(id);
+            return Ok(_service.FindById(id));
         }
 
         // POST: api/Book
         [HttpPost]
-        public void Post([FromBody] string value)
+        public IActionResult Post([FromBody] Book value)
         {
+            return Ok(_service.Create(value));
         }
 
         // PUT: api/Book/5

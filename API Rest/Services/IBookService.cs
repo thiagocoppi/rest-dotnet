@@ -10,7 +10,7 @@ namespace WebApplication1.Services
     {
         Book Create(Book book);
         Book FindById(long id);
-        Book ListAllBook(long id);
+        List<Book> ListAllBook();
         Book Update(Book book);
         void RemoveById(long id);
     }

@@ -27,9 +27,10 @@ namespace WebApplication1.Services.Impl
             return _repository.FindById(id);
         }
 
-        public Book ListAllBook(long id)
+        public List<Book> ListAllBook()
         {
-            throw new NotImplementedException();
+            List<Book> lista = _repository.FindAll();
+            return _repository.FindAll();
         }
 
         public void RemoveById(long id)
